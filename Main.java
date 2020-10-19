@@ -10,6 +10,8 @@ class PeopleStats {
 
 class Person {
     private final String firstName;
+    private final String lastName;
+
 
     public Person(String firstName) {
         this.firstName = firstName;
@@ -17,5 +19,9 @@ class Person {
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 }
