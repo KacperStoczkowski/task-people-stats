@@ -3,6 +3,11 @@ class Main {
         PeopleStats peopleStats = new PeopleStats(Paths.get("śćieżka", "do", "pliku"));
 
         System.out.println(String.format("Liczba osób: %d", peopleStats.count()));
+
+        PeopleStats peopleStats = new PeopleStats(Paths.get("śćieżka", "do", "pliku"));
+
+        System.out.println(String.format("Liczba osób: %d", peopleStats.count()));
+        System.out.println(String.format("Liczba osób z unikalnymi nazwiskami: %d", peopleStats.countUniqueLastNames()));
     }
 }
 
@@ -41,4 +46,11 @@ class Person {
 
     public long count() {
         return people.size();
+    }
+
+    public long countUniqueLastNames() {
+        return people.stream()
+                .map(Person::getLastName)
+                .distinct()
+                .count();
     }
